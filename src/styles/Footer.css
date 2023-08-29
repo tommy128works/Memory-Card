@@ -1,10 +1,9 @@
 #footer {
-  /* align-self: flex-end; */
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 10px;
-  /* margin-bottom: 10px; */
+  margin-bottom: 5px;
 
   font-size: 1rem;
 }
