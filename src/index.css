@@ -1,11 +1,9 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  /* line-height: 1.5; */
-  /* font-weight: 400; */
 
-  /* color-scheme: light dark; */
-  /* color: rgba(255, 255, 255, 0.87); */
-  /* background-color: #242424; */
+  --red: #e53935;
+  --black: #000000;
+  --white: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,4 +16,23 @@ body {
   margin: 0;
   /* display: flex; */
   min-height: 100vh;
+
+  background-image: url("./assets/pokemon_background.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+
+.red-text {
+  color: var(--red);
+}
+
+.black-text {
+  color: var(--black);
+}
+
+.white-text {
+  color: var(--white);
+}
+

@@ -1,0 +1,28 @@
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 10px;
+  column-gap: 10px;
+
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#header img {
+  width: 3rem;
+  height: auto;
+}
+
+#header svg {
+  height: 3rem;
+  width: auto;
+}
+
+@media (max-width: 400px) {
+
+  #header {
+    font-size: 1.75rem;
+  }
+}

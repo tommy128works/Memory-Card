@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import Header from "./components/Header.jsx";
 
 function App() {
 
   return (
-    <div>
-      <p>default paragraph</p>
-      <p>default paragraph</p>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
