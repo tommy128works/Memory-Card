@@ -14,15 +14,14 @@
 
 body {
   margin: 0;
-  /* display: flex; */
-  min-height: 100vh;
+
+  /* min-height: 100vh; */
 
   background-image: url("./assets/pokemon_background.png");
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 .red-text {
   color: var(--red);
@@ -35,4 +34,3 @@ body {
 .white-text {
   color: var(--white);
 }
-
