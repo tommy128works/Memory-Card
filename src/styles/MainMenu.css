@@ -1,0 +1,82 @@
+#main-menu {
+
+}
+
+#main-menu-modal {
+  /* display: block; */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-menu-modal-content {
+  background-color: #fefefe;
+  padding: 10px;
+  border: 5px solid black;
+  width: max(650px, 40vw);
+}
+
+#main-menu-title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#main-menu-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  margin: 20px;
+}
+
+#main-menu-buttons-container button {
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  width: 150px;
+  height: 50px;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+
+#main-menu-easy-button {
+  background-color: #36f700;
+}
+
+#main-menu-medium-button {
+  background-color: #ebee00;
+}
+
+#main-menu-hard-button {
+  background-color: #f70000;
+}
+
+
+@media (max-width: 700px) {
+
+  #main-menu-modal-content {
+    width: max(280px, 80vw);
+    padding: 5px;
+  }
+
+  #main-menu-title {
+    font-size: 1.5rem;
+  }
+
+  #main-menu-buttons-container {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+}
