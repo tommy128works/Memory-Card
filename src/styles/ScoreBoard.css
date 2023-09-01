@@ -1,0 +1,14 @@
+#score-board {
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+}
+
+#score-board {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
