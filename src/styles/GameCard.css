@@ -1,0 +1,22 @@
+
+
+.game-card {
+  --card-width: 63px;
+  --card-height: 88px;
+  width: calc(var(--card-width) * 3);
+  height: calc(var(--card-height) * 3);
+
+  background-color: rgba(0, 0, 0, 0.271);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 0 10px;
+  
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
