@@ -1,20 +1,7 @@
 import { useState } from "react";
 import "../styles/MainMenu.css";
-import Loader from "./Loader.jsx";
-import fetchImages from "./fetchImages.js";
 
 function MainMenu() {
-  const [isLoading, setIsLoading] = useState(true);
-  fetchImages(setIsLoading);
-
-  if (isLoading === true) {
-    return (
-      <div id="main-menu">
-        <Loader />
-      </div>
-    );
-  }
-
   return (
     <div id="main-menu">
       <div id="main-menu-modal">
