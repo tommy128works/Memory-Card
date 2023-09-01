@@ -16,9 +16,8 @@ body {
   margin: 0;
   padding: 0;
 
-  background-image: url("./assets/pokemon_background.png");
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  background: url(./assets/pokemon_background.png) no-repeat center bottom fixed;
+
   background-size: cover;
 }
 
