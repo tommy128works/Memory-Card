@@ -4,6 +4,17 @@ const getRandomInt = (max) => {
   return Math.ceil(Math.random() * max);
 };
 
+const formatName = (string) => {
+  let firstLetter = string.slice(0, 1);
+  let result = firstLetter.toUpperCase() + string.slice(1);
+
+  if (result.length > 10) {
+    result = result.slice(0, 10) + "...";
+  }
+
+  return result;
+}
+
 async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
   let dataCollection = [];
   let usedNumbers = [];
@@ -30,7 +41,7 @@ async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
 
         dataCollection.push({
           image: data.sprites.front_default,
-          name: data.name,
+          name: formatName(data.name),
           id: i,
         });
       }

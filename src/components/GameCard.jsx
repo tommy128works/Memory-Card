@@ -4,7 +4,7 @@ function GameCard({ image, name }) {
   return (
     <div className="game-card">
       <img src={image} />
-      <div>{name}...</div>
+      <div>{name}</div>
     </div>
   );
 }
