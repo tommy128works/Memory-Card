@@ -1,11 +1,33 @@
+import { useState } from "react";
+
 import MainMenu from "./MainMenu.jsx";
 import Loader from "./Loader.jsx";
 import Gameboard from "./Gameboard.jsx";
+import fetchAPIData from "./fetchAPIData.js";
 
-function Content({ gameState }) {
+function Content() {
+  const [gameState, setGameState] = useState("main-menu");
+  // for testing only
+  // const [gameState, setGameState] = useState("loading");
+  // const [gameState, setGameState] = useState("gameplay");
+
+  const [gameDifficulty, setGameDifficulty] = useState(null);
+
+  const [gameData, setGameData] = useState(null);
+
   if (gameState === "main-menu") {
-    return <MainMenu />;
+    return (
+      <MainMenu
+        setGameDifficulty={setGameDifficulty}
+        setGameState={setGameState}
+      />
+    );
   } else if (gameState === "loading") {
+    fetchAPIData();
+    // fetch data here
+    // set dataState
+    // set new gameState
+
     return <Loader />;
   } else if (gameState === "gameplay") {
     return <Gameboard />;

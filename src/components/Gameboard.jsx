@@ -5,7 +5,7 @@ import ScoreBoard from "./ScoreBoard.jsx";
 function Gameboard() {
   const cards = [];
   for (let i = 0; i < 16; i++) {
-    cards.push(<GameCard />);
+    cards.push(<GameCard key={i} />);
   }
 
   return (
