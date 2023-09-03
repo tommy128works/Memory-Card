@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import MainMenu from "./MainMenu.jsx";
 import Loader from "./Loader.jsx";
@@ -23,10 +23,11 @@ function Content() {
       />
     );
   } else if (gameState === "loading") {
-    fetchAPIData();
-    // fetch data here
-    // set dataState
-    // set new gameState
+    // useEffect(() => {
+    //   fetchAPIData(gameDifficulty, setGameData, setGameState);
+    // }, []);
+
+    fetchAPIData(gameDifficulty, setGameData, setGameState);
 
     return <Loader />;
   } else if (gameState === "gameplay") {
