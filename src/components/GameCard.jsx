@@ -1,10 +1,10 @@
 import "../styles/GameCard.css";
 
-function GameCard() {
+function GameCard({ image, name }) {
   return (
     <div className="game-card">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/643.png" />
-      <div>ABCDEFGHIJ...</div>
+      <img src={image} />
+      <div>{name}...</div>
     </div>
   );
 }

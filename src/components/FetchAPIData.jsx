@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const MAX_POKEMON_ID = 1010;
 
 const getRandomInt = (max) => {
@@ -8,14 +6,11 @@ const getRandomInt = (max) => {
 
 async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
   let dataCollection = [];
-  let tempURL = "";
 
   try {
     for (let i = 0; i < gameDifficulty; i++) {
-      tempURL =
-        "https://pokeapi.co/api/v2/pokemon/" + getRandomInt(MAX_POKEMON_ID);
 
-      const response = await fetch(tempURL, {
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + getRandomInt(MAX_POKEMON_ID), {
         mode: "cors",
       });
       const data = await response.json();

@@ -2,18 +2,16 @@ import "../styles/Gameboard.css";
 import GameCard from "./GameCard.jsx";
 import ScoreBoard from "./ScoreBoard.jsx";
 
-function Gameboard() {
-  const cards = [];
-  for (let i = 0; i < 16; i++) {
-    cards.push(<GameCard key={i} />);
-  }
+function Gameboard({ gameData }) {
 
   return (
     <>
       <ScoreBoard />
       <div id="gameboard">
-        {cards}
-        {/* <GameCard /> */}
+        {gameData.map((card) => (
+          <GameCard key={card.id} image={card.image} name={card.name} />
+        ))}
+
       </div>
     </>
   );

@@ -1,19 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import MainMenu from "./MainMenu.jsx";
 import Loader from "./Loader.jsx";
 import Gameboard from "./Gameboard.jsx";
-import fetchAPIData from "./fetchAPIData.js";
+import FetchAPIData from "./FetchAPIData.jsx";
 
 function Content() {
   const [gameState, setGameState] = useState("main-menu");
-  // for testing only
-  // const [gameState, setGameState] = useState("loading");
-  // const [gameState, setGameState] = useState("gameplay");
-
   const [gameDifficulty, setGameDifficulty] = useState(null);
-
   const [gameData, setGameData] = useState(null);
+
+  // useEffect(() => {
+  //   fetchAPIData(gameDifficulty, setGameData, setGameState);
+  // }, []);
 
   if (gameState === "main-menu") {
     return (
@@ -23,15 +22,10 @@ function Content() {
       />
     );
   } else if (gameState === "loading") {
-    // useEffect(() => {
-    //   fetchAPIData(gameDifficulty, setGameData, setGameState);
-    // }, []);
-
-    fetchAPIData(gameDifficulty, setGameData, setGameState);
-
+    FetchAPIData(gameDifficulty, setGameData, setGameState);
     return <Loader />;
   } else if (gameState === "gameplay") {
-    return <Gameboard />;
+    return <Gameboard gameData={gameData} />;
   } else {
     return <div>Unknown error</div>;
   }
