@@ -6,12 +6,22 @@ const getRandomInt = (max) => {
 
 async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
   let dataCollection = [];
+  let usedNumbers = [];
+
+  let tempInt = 0;
 
   if (gameDifficulty !== null) {
     try {
       for (let i = 0; i < gameDifficulty; i++) {
+
+        do {
+          tempInt = getRandomInt(MAX_POKEMON_ID);
+        }
+        while (usedNumbers.includes(tempInt));
+        usedNumbers.push(tempInt);
+
         const response = await fetch(
-          "https://pokeapi.co/api/v2/pokemon/" + getRandomInt(MAX_POKEMON_ID),
+          "https://pokeapi.co/api/v2/pokemon/" + tempInt,
           {
             mode: "cors",
           }
@@ -29,7 +39,7 @@ async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
 
       // for testing only
       console.log(dataCollection);
-      
+
     } catch (error) {
       console.log(error);
     }
