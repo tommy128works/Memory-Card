@@ -24,7 +24,7 @@ function Content() {
   } else if (gameState === "loading") {
     return <Loader />;
   } else if (gameState === "gameplay") {
-    return <Gameboard gameData={gameData} />;
+    return <Gameboard gameData={gameData} setGameData={setGameData} />;
   } else {
     return <div>Unknown error</div>;
   }

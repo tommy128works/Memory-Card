@@ -4,7 +4,7 @@ import "../styles/Gameboard.css";
 import GameCard from "./GameCard.jsx";
 import ScoreBoard from "./ScoreBoard.jsx";
 
-function Gameboard({ gameData }) {
+function Gameboard({ gameData, setGameData }) {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
@@ -26,6 +26,8 @@ function Gameboard({ gameData }) {
             setScore={setScore}
             highScore={highScore}
             setHighScore={setHighScore}
+            gameData={gameData}
+            setGameData={setGameData}
           />
         ))}
       </div>

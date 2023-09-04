@@ -1,5 +1,11 @@
 import "../styles/GameCard.css";
 
+const shuffleArray = (array) => {
+  array.sort(() => Math.random() - 0.5);
+  array.sort(() => Math.random() - 0.5);
+  return array.sort(() => Math.random() - 0.5);
+}
+
 function GameCard({
   id,
   image,
@@ -10,8 +16,9 @@ function GameCard({
   setScore,
   highScore,
   setHighScore,
+  gameData,
+  setGameData
 }) {
-
   const checkCard = (event) => {
     let tempCard = event.target.getAttribute("data-id");
 
@@ -19,13 +26,15 @@ function GameCard({
       // GAME OVER! MUAHAHAHAH
     } else {
       setScore(score + 1);
-      setCardTracker([...cardTracker, tempCard])
+      setCardTracker([...cardTracker, tempCard]);
 
       if (score + 1 > highScore) {
         setHighScore(score + 1);
       }
-    }
 
+      setGameData(shuffleArray(gameData));
+
+    }
   };
 
   return (
