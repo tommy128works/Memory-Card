@@ -13,7 +13,7 @@ const formatName = (string) => {
   }
 
   return result;
-}
+};
 
 async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
   let dataCollection = [];
@@ -24,11 +24,9 @@ async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
   if (gameDifficulty !== null) {
     try {
       for (let i = 0; i < gameDifficulty; i++) {
-
         do {
           tempInt = getRandomInt(MAX_POKEMON_ID);
-        }
-        while (usedNumbers.includes(tempInt));
+        } while (usedNumbers.includes(tempInt));
         usedNumbers.push(tempInt);
 
         const response = await fetch(
@@ -50,7 +48,6 @@ async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
 
       // for testing only
       console.log(dataCollection);
-
     } catch (error) {
       console.log(error);
     }

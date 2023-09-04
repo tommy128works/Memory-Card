@@ -1,10 +1,10 @@
 import "../styles/ScoreBoard.css";
 
-function ScoreBoard() {
+function ScoreBoard({ score, highScore }) {
   return (
     <div id="score-board">
-      <div>High Score: 10</div>
-      <div>Score: 10 </div>
+      <div>High Score: {highScore}</div>
+      <div>Score: {score} </div>
       <div>Round 0/5</div>
     </div>
   );

@@ -22,7 +22,6 @@ function Content() {
       />
     );
   } else if (gameState === "loading") {
-    // FetchAPIData(gameDifficulty, setGameData, setGameState);
     return <Loader />;
   } else if (gameState === "gameplay") {
     return <Gameboard gameData={gameData} />;

@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import "../styles/MainMenu.css";
 
 const EASY_DIFFICULTY = 4;
