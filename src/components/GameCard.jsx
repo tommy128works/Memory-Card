@@ -4,7 +4,7 @@ const shuffleArray = (array) => {
   array.sort(() => Math.random() - 0.5);
   array.sort(() => Math.random() - 0.5);
   return array.sort(() => Math.random() - 0.5);
-}
+};
 
 function GameCard({
   id,
@@ -17,13 +17,15 @@ function GameCard({
   highScore,
   setHighScore,
   gameData,
-  setGameData
+  setGameData,
+  gameDifficulty,
+  setGameState,
 }) {
   const checkCard = (event) => {
     let tempCard = event.target.getAttribute("data-id");
 
     if (cardTracker.includes(tempCard)) {
-      // GAME OVER! MUAHAHAHAH
+      return setGameState("lose");
     } else {
       setScore(score + 1);
       setCardTracker([...cardTracker, tempCard]);
@@ -32,8 +34,11 @@ function GameCard({
         setHighScore(score + 1);
       }
 
-      setGameData(shuffleArray(gameData));
+      if (score + 1 === gameDifficulty) {
+        return setGameState("win");
+      }
 
+      setGameData(shuffleArray(gameData));
     }
   };
 

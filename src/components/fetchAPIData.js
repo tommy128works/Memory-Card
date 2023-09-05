@@ -45,9 +45,6 @@ async function fetchAPIData(gameDifficulty, setGameData, setGameState) {
       }
       setGameData(dataCollection);
       setGameState("gameplay");
-
-      // for testing only
-      console.log(dataCollection);
     } catch (error) {
       console.log(error);
     }

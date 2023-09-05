@@ -4,9 +4,7 @@ import "../styles/Gameboard.css";
 import GameCard from "./GameCard.jsx";
 import ScoreBoard from "./ScoreBoard.jsx";
 
-function Gameboard({ gameData, setGameData }) {
-  const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+function Gameboard({ gameData, setGameData, gameDifficulty, setGameState, score, setScore, highScore, setHighScore }) {
 
   const [cardTracker, setCardTracker] = useState([]);
 
@@ -28,6 +26,8 @@ function Gameboard({ gameData, setGameData }) {
             setHighScore={setHighScore}
             gameData={gameData}
             setGameData={setGameData}
+            gameDifficulty={gameDifficulty}
+            setGameState={setGameState}
           />
         ))}
       </div>
