@@ -1,5 +1,6 @@
 import "../styles/Header.css";
 import pokeball from "../assets/pokeball_icon.png";
+import resetGame from "./resetGame.js";
 
 function Header() {
   return (

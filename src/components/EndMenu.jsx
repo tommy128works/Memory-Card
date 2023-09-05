@@ -1,4 +1,5 @@
 import "../styles/EndMenu.css";
+import resetGame from "./resetGame.js";
 
 function Message({ gameResult }) {
   if (gameResult === "win") {
@@ -8,12 +9,29 @@ function Message({ gameResult }) {
   }
 }
 
-function EndMenu({ gameResult, score, highScore }) {
+function EndMenu({
+  gameResult,
+  setGameState,
+  setGameDifficulty,
+  setScore,
+  setCurrentRound,
+}) {
   return (
     <>
       <div id="end-menu">
         <Message gameResult={gameResult} />
-        <button>PLAY AGAIN</button>
+        <button
+          onClick={() =>
+            resetGame(
+              setGameState,
+              setGameDifficulty,
+              setScore,
+              setCurrentRound
+            )
+          }
+        >
+          PLAY AGAIN
+        </button>
       </div>
     </>
   );

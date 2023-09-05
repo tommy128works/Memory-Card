@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import Header from "./Header.jsx";
 import MainMenu from "./MainMenu.jsx";
 import Loader from "./Loader.jsx";
 import Gameboard from "./Gameboard.jsx";
@@ -16,21 +17,34 @@ function Content() {
   const [currentRound, setCurrentRound] = useState(1);
 
   useEffect(() => {
+    if (gameDifficulty === "reset") {
+      return;
+    }
+
     fetchAPIData(gameDifficulty, setGameData, setGameState);
   }, [gameDifficulty]);
 
   if (gameState === "main-menu") {
     return (
-      <MainMenu
-        setGameDifficulty={setGameDifficulty}
-        setGameState={setGameState}
-      />
+      <>
+        <Header />
+        <MainMenu
+          setGameDifficulty={setGameDifficulty}
+          setGameState={setGameState}
+        />
+      </>
     );
   } else if (gameState === "loading") {
-    return <Loader />;
+    return (
+      <>
+        <Header />
+        <Loader />
+      </>
+    );
   } else if (gameState === "gameplay") {
     return (
       <>
+        <Header />
         <ScoreBoard
           score={score}
           highScore={highScore}
@@ -54,13 +68,22 @@ function Content() {
   } else if (gameState === "lose" || gameState === "win") {
     return (
       <>
+        <Header />
         <ScoreBoard
           score={score}
           highScore={highScore}
           currentRound={currentRound}
           gameDifficulty={gameDifficulty}
         />
-        <EndMenu gameResult={gameState} score={score} highScore={highScore} />
+        <EndMenu
+          gameResult={gameState}
+          score={score}
+          highScore={highScore}
+          setGameState={setGameState}
+          setGameDifficulty={setGameDifficulty}
+          setScore={setScore}
+          setCurrentRound={setCurrentRound}
+        />
       </>
     );
   } else {
