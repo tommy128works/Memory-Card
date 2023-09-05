@@ -2,15 +2,23 @@ import { useState } from "react";
 
 import "../styles/Gameboard.css";
 import GameCard from "./GameCard.jsx";
-import ScoreBoard from "./ScoreBoard.jsx";
 
-function Gameboard({ gameData, setGameData, gameDifficulty, setGameState, score, setScore, highScore, setHighScore }) {
-
+function Gameboard({
+  gameData,
+  setGameData,
+  gameDifficulty,
+  setGameState,
+  score,
+  setScore,
+  highScore,
+  setHighScore,
+  currentRound,
+  setCurrentRound,
+}) {
   const [cardTracker, setCardTracker] = useState([]);
 
   return (
     <>
-      <ScoreBoard score={score} highScore={highScore} />
       <div id="gameboard">
         {gameData.map((card) => (
           <GameCard
@@ -28,6 +36,8 @@ function Gameboard({ gameData, setGameData, gameDifficulty, setGameState, score,
             setGameData={setGameData}
             gameDifficulty={gameDifficulty}
             setGameState={setGameState}
+            currentRound={currentRound}
+            setCurrentRound={setCurrentRound}
           />
         ))}
       </div>

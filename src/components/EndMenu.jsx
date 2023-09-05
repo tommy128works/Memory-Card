@@ -1,5 +1,4 @@
 import "../styles/EndMenu.css";
-import ScoreBoard from "./ScoreBoard.jsx";
 
 function Message({ gameResult }) {
   if (gameResult === "win") {
@@ -12,7 +11,6 @@ function Message({ gameResult }) {
 function EndMenu({ gameResult, score, highScore }) {
   return (
     <>
-      <ScoreBoard score={score} highScore={highScore} />
       <div id="end-menu">
         <Message gameResult={gameResult} />
         <button>PLAY AGAIN</button>

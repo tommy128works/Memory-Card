@@ -20,6 +20,8 @@ function GameCard({
   setGameData,
   gameDifficulty,
   setGameState,
+  currentRound,
+  setCurrentRound,
 }) {
   const checkCard = (event) => {
     let tempCard = event.target.getAttribute("data-id");
@@ -37,7 +39,7 @@ function GameCard({
       if (score + 1 === gameDifficulty) {
         return setGameState("win");
       }
-
+      setCurrentRound(currentRound + 1);
       setGameData(shuffleArray(gameData));
     }
   };
