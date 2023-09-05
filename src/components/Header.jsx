@@ -2,9 +2,19 @@ import "../styles/Header.css";
 import pokeball from "../assets/pokeball_icon.png";
 import resetGame from "./resetGame.js";
 
-function Header() {
+function Header({
+  setGameState,
+  setGameDifficulty,
+  setScore,
+  setCurrentRound,
+}) {
   return (
-    <header id="header">
+    <header
+      id="header"
+      onClick={() =>
+        resetGame(setGameState, setGameDifficulty, setScore, setCurrentRound)
+      }
+    >
       <img src={pokeball} alt="pokeball icon" />
 
       <div>

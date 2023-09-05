@@ -27,7 +27,12 @@ function Content() {
   if (gameState === "main-menu") {
     return (
       <>
-        <Header />
+        <Header
+          setGameState={setGameState}
+          setGameDifficulty={setGameDifficulty}
+          setScore={setScore}
+          setCurrentRound={setCurrentRound}
+        />
         <MainMenu
           setGameDifficulty={setGameDifficulty}
           setGameState={setGameState}
@@ -37,14 +42,24 @@ function Content() {
   } else if (gameState === "loading") {
     return (
       <>
-        <Header />
+        <Header
+          setGameState={setGameState}
+          setGameDifficulty={setGameDifficulty}
+          setScore={setScore}
+          setCurrentRound={setCurrentRound}
+        />
         <Loader />
       </>
     );
   } else if (gameState === "gameplay") {
     return (
       <>
-        <Header />
+        <Header
+          setGameState={setGameState}
+          setGameDifficulty={setGameDifficulty}
+          setScore={setScore}
+          setCurrentRound={setCurrentRound}
+        />
         <ScoreBoard
           score={score}
           highScore={highScore}
@@ -68,7 +83,12 @@ function Content() {
   } else if (gameState === "lose" || gameState === "win") {
     return (
       <>
-        <Header />
+        <Header
+          setGameState={setGameState}
+          setGameDifficulty={setGameDifficulty}
+          setScore={setScore}
+          setCurrentRound={setCurrentRound}
+        />
         <ScoreBoard
           score={score}
           highScore={highScore}
