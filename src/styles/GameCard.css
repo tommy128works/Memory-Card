@@ -17,6 +17,8 @@
   color: white;
   font-weight: 500;
   font-size: 1.75rem;
+
+  cursor: pointer;
 }
 
 .game-card > * {

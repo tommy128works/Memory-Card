@@ -60,7 +60,7 @@ function Content() {
           currentRound={currentRound}
           gameDifficulty={gameDifficulty}
         />
-        <EndMenu gameResult={gameState} score={score} highScore={highScore} />;
+        <EndMenu gameResult={gameState} score={score} highScore={highScore} />
       </>
     );
   } else {
