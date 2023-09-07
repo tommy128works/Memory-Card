@@ -10,7 +10,7 @@ Gain points by clicking each card only once!
 
 Asynchronous code was implemented with Async/Await to fetch data from the [RESTful Pokémon API](https://pokeapi.co/) which is used to create each pokemon card.
 
-Web application was built using React. Props and states were abundantly used to share data across React components. The React useEffect hook was invoked to fetch API data whenever the user selected a game mode difficulty on the main menu.
+This web application was built using React. Props and states were abundantly used to share data across React components. The React useEffect hook was invoked to fetch API data whenever the user selected a game mode difficulty on the main menu.
 
 Technologies Used:
 - React
@@ -51,3 +51,9 @@ You win when you have clicked all available cards once. Afterwards, you can chal
 ## Credits
 
 [This project](https://www.theodinproject.com/lessons/node-path-react-new-memory-card) is from The Odin Project's [Full Stack JavaScript](https://www.theodinproject.com/paths/full-stack-javascript) course.
+
+[Background image](https://rare-gallery.com/4548246-pokmon-pixel-art.html#)
+
+[Pokeball icon in header](https://www.pixilart.com/draw/pokeball-16x16-6e9c13b725562f5#)
+
+[Pikachu loader icon](https://icons8.com/icon/pl6INoeF7wo2/pikachu-pokemon)
